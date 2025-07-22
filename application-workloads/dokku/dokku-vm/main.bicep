@@ -7,11 +7,11 @@ param sshKeyData string
 @description('DNS Label for the Public IP. Must be lowercase. It should match with the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$ or it will raise an error.')
 param dnsLabelPrefix string
 
-@description('The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version. Allowed values: 20_04-lts-gen2.')
+@description('The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version. Allowed values: 22_04-lts-gen2.')
 @allowed([
-  '20_04-lts-gen2'
+  '22_04-lts-gen2'
 ])
-param ubuntuOSVersion string = '20_04-lts-gen2'
+param ubuntuOSVersion string = '22_04-lts-gen2'
 
 @description('The Dokku version to launch')
 param dokkuVersion string = '0.35.20'
@@ -39,7 +39,7 @@ param location string = resourceGroup().location
 
 var storageAccountName = '${uniqueString(resourceGroup().id)}dokku'
 var imagePublisher = 'Canonical'
-var imageOffer = '0001-com-ubuntu-server-focal'
+var imageOffer = '0001-com-ubuntu-jammy'
 var nicName = 'dokkuVMNic'
 var addressPrefix = '10.0.0.0/16'
 var subnetName = 'Subnet'
