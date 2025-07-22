@@ -39,7 +39,7 @@ param location string = resourceGroup().location
 
 var storageAccountName = '${uniqueString(resourceGroup().id)}dokku'
 var imagePublisher = 'Canonical'
-var imageOffer = '0001-com-ubuntu-server-focal'
+var imageOffer = '0001-com-ubuntu-jammy'
 var nicName = 'dokkuVMNic'
 var addressPrefix = '10.0.0.0/16'
 var subnetName = 'Subnet'
